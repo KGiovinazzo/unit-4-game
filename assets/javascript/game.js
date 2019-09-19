@@ -1,3 +1,7 @@
+// var kirby;
+// var groot;
+// var pikachu;
+// var louise;
 var attack;
 var defend;
 var attackChar;
@@ -25,16 +29,16 @@ var myChar = "";
 var myDefend = "";
 
 // reset health points.
-characters.kirby.healthPts = 100;
-characters.groot.healthPts = 150;
-characters.pikachu.healthPts = 120;
-characters.louise.healthPts = 160
+characters.kirb.healthPts = 100;
+characters.groo.healthPts = 150;
+characters.pika.healthPts = 120;
+characters.lou.healthPts = 160
 
 // reset attack power.
-characters.kirby.attackPwr = 10;
-characters.groot.attackPwr = 20;
-characters.pikachu.attackPwr = 15;
-characters.louise.attackPwr = 25;
+characters.kirb.attackPwr = 10;
+characters.gro.attackPwr = 20;
+characters.pika.attackPwr = 15;
+characters.lou.attackPwr = 25;
 
 // delete all in-game text.
 $(".youAttacked").empty();
@@ -191,6 +195,8 @@ $(".attackBtn").click(function(){
 
     if (!(attackerHP < 1) || !(defenderHP < 1)) {
         attackerHP = (attackerHP - defenderCAP);
+
+
 
     }
 })
