@@ -139,6 +139,58 @@ $(document).ready(function () {
         // Clears characters from the top
         $("#photos").hide();
 
+    })
+
+});
+
+// When the player chooses their characters, the game then moves that character into the defender HTMLTableSectionElement. Then, the remainder stay in the top.
+
+$(".move").click(function(){
+    $(this).appendTo("#defender");
+    myDefend = $(this);
+    yourDefend = $(myDefend).chilren().attr("value");
+    $(".youDefeated").empty();
+
+    if(yourDefend == characters.kirby.name) {
+        defenderHP = characters.kirby.healthPts;
+        defenderAP = characters.kirby.attackPwr;
+        defenderCAP = characters.kirby.counterAttackPwr;
+        defend = characters.kirby;
+    }
+
+    else if(yourDefend == characters.groot.name) {
+        defenderHP = characters.groot.healthPts;
+        defenderAP = characters.groot.attackPwr;
+        defenderCAP = characters.groot.counterAttackPwr;
+        defend = characters.groot;
+    }
+
+    else if(yourDefend == characters.pikachu.name) {
+        defenderHP = characters.pikachu.healthPts;
+        defenderAP = characters.pikachu.attackPwr;
+        defenderCAP = characters.pikachu.counterAttackPwr;
+        defend = characters.pikachu;
+    }
+
+    else if(yourDefend == characters.louise.name) {
+        defenderHP = characters.louise.healthPts;
+        defenderAP = characters.louise.attackPwr;
+        defenderCAP = characters.louise.counterAttackPwr;
+        defend = characters.louise;
+    }
 
 
-    });
+});
+
+//when the user clicks attack, your character's helth points go down based on the counter attack. 
+
+$(".attackBtn").click(function(){
+    // if ($("#defender").children().length == 0) {
+    //     $(".noEnemy").html("No enemy here.");
+    // }
+
+    if (!(attackerHP < 1) || !(defenderHP < 1)) {
+        attackerHP = (attackerHP - defenderCAP);
+
+    }
+})
