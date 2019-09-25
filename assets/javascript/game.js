@@ -1,7 +1,4 @@
-// var kirby;
-// var groot;
-// var pikachu;
-// var louise;
+// var characters
 var attack;
 var defend;
 var attackChar;
@@ -23,22 +20,20 @@ function reset() {
     $(".restart").hide();
     $(".attackBtn").show();
 
-}
-
 var myChar = "";
 var myDefend = "";
 
 // reset health points.
-characters.kirb.healthPts = 100;
-characters.groo.healthPts = 150;
-characters.pika.healthPts = 120;
-characters.lou.healthPts = 160
+characters.kirby.healthPts = 100;
+characters.groot.healthPts = 150;
+characters.pikachu.healthPts = 120;
+characters.louise.healthPts = 160
 
 // reset attack power.
-characters.kirb.attackPwr = 10;
-characters.gro.attackPwr = 20;
-characters.pika.attackPwr = 15;
-characters.lou.attackPwr = 25;
+characters.kirby.attackPwr = 10;
+characters.groot.attackPwr = 20;
+characters.pikachu.attackPwr = 15;
+characters.louise.attackPwr = 25;
 
 // delete all in-game text.
 $(".youAttacked").empty();
@@ -55,10 +50,12 @@ $("#pikachu").appendTo("#photos");
 $("#louise").appendTo("#photos");
 
 //writing each characters healthpoints to the html so they show up on the page.
-$("#kirby").html(characters.kirby.healthPts);
-$('#groot').html(characters.groot.healthPts);
-$('#pikachu').html(characters.pikachu.healthPts);
-$('#louise').html(characters.louise.healthPts);
+$("#kirby").text(characters.kirby.healthPts);
+$('#groot').text(characters.groot.healthPts);
+$('#pikachu').text(characters.pikachu.healthPts);
+$('#louise').text(characters.louise.healthPts);
+
+};
 
 var characters = {
 
@@ -196,7 +193,13 @@ $(".attackBtn").click(function(){
     if (!(attackerHP < 1) || !(defenderHP < 1)) {
         attackerHP = (attackerHP - defenderCAP);
 
+        $("." + yourChar).html(attackerHP);
 
+        defenderHP = (defenderHP - attackerAP);
 
+        //new health points to the html
+
+        $("." + yourDefend).html(defenderHP);
     }
+
 })
