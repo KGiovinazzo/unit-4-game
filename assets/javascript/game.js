@@ -1,4 +1,4 @@
-// var characters
+var characters
 var attack;
 var defend;
 var attackChar;
@@ -44,16 +44,16 @@ $(".youLose").empty();
 $(".noEnemy").empty();
 
 //adding the picture for each character so they show up on the page.
-$("#kirby").appendTo("#photos");
-$("#groot").appendTo("#photos");
-$("#pikachu").appendTo("#photos");
-$("#louise").appendTo("#photos");
+$("#kirb").appendTo("#photos");
+$("#groo").appendTo("#photos");
+$("#pika").appendTo("#photos");
+$("#lou").appendTo("#photos");
 
 //writing each characters healthpoints to the html so they show up on the page.
-$("#kirby").text(characters.kirby.healthPts);
-$('#groot').text(characters.groot.healthPts);
-$('#pikachu').text(characters.pikachu.healthPts);
-$('#louise').text(characters.louise.healthPts);
+$("#ki").text(characters.kirby.healthPts);
+$('#gr').text(characters.groot.healthPts);
+$('#pi').text(characters.pikachu.healthPts);
+$('#lo').text(characters.louise.healthPts);
 
 };
 
@@ -149,7 +149,7 @@ $(document).ready(function () {
 $(".move").click(function(){
     $(this).appendTo("#defender");
     myDefend = $(this);
-    yourDefend = $(myDefend).chilren().attr("value");
+    yourDefend = $(myDefend).children().attr("value");
     $(".youDefeated").empty();
 
     if(yourDefend == characters.kirby.name) {
@@ -183,7 +183,7 @@ $(".move").click(function(){
 
 });
 
-//when the user clicks attack, your character's helth points go down based on the counter attack. 
+//when the user clicks attack, your character's health points go down based on the counter attack. 
 
 $(".attackBtn").click(function(){
     // if ($("#defender").children().length == 0) {
